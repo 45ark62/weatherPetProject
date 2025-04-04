@@ -1,0 +1,46 @@
+:root {
+    --main-color: #ffffff; /* Определяем переменную с основным цветом */
+  }
+
+.navigationMenu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  height: 60px;
+  font-size: 25px;
+  gap: 50px;
+}
+a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: color 0.3s ease-in-out, text-decoration 0.3s;
+}
+a:hover {
+    text-decoration: underline;
+}
+.active {
+    font-weight: bold;
+    border-bottom: 2px solid #6a5acd;
+  }
+header {
+  margin-top: 20px;
+  width: 100%;
+  gap: 50%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 25px;
+}
+.img {
+  width: 55px;
+  height: 55px;
+}

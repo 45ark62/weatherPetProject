@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+}
+body {
+  background: linear-gradient(
+    to right,
+    #291d53,
+    #4d1740,
+    #5a1e2d
+  ); /* Голубой градиент */
+  height: 100vh;
+ 
+  color: white;
+  font-size: 24px;
+}

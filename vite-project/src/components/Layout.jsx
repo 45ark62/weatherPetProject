@@ -1,18 +1,19 @@
-import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
+import styles from "../styles/index.module.css";
+import Header from "./Header";
 
 function Layout() {
   return (
     <>
-        <header>
-            <Link to="/">Главная</Link>
-            <Link to="/search-history">История поиска</Link>
-        </header>
-        <Outlet/>
-        <footer>2025</footer>
+     <Header/>
+      <div className={styles.container}>
+      <Outlet />
+      </div>
+     
+      <footer>2025</footer>
     </>
-    
-  )
+  );
 }
 
-export default Layout
+export default Layout;
