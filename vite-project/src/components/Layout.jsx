@@ -11,7 +11,7 @@ function Layout() {
       <Outlet />
       </div>
      
-      <footer>2025</footer>
+      
     </>
   );
 }

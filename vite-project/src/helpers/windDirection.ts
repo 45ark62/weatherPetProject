@@ -1,4 +1,4 @@
-const getWindDirection = (degree) => {
+const getWindDirection = (degree: number) => {
     if (degree >= 337.5 || degree < 22.5) return "Северный (N)";
     if (degree >= 22.5 && degree < 67.5) return "Северо-восточный (NE)";
     if (degree >= 67.5 && degree < 112.5) return "Восточный (E)";
