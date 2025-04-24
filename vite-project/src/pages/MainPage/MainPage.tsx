@@ -13,17 +13,17 @@ const MainPage: React.FC = () => {
     skip: city === "",
   });
 
-  const showInitialScreen = city === "";
-  const showErrorMessage = !isLoading && error && city !== "";
+  const SHOW_INITAL_SCREEN = city === "";
+  const SHOW_ERROR_MESSAGE = !isLoading && error && city !== "";
 
   return (
     <>
       <SearchInput />
-      <div className={style.container}>
-        <div className={style.currentWeather}>
+      <main className={style.container}>
+        <section className={style.currentWeather}>
           {isLoading && <div className={style.helperText}>Загрузка...</div>}
 
-          {showInitialScreen && (
+          {SHOW_INITAL_SCREEN && (
             <div className={style.emptyState}>
               <img
                 src="/illustration-search.svg"
@@ -36,7 +36,7 @@ const MainPage: React.FC = () => {
             </div>
           )}
 
-          {showErrorMessage && (
+          {SHOW_ERROR_MESSAGE && (
             <div className={style.error}>
               ❌ Город не найден. Попробуйте снова.
             </div>
@@ -48,12 +48,12 @@ const MainPage: React.FC = () => {
               current={data.current}
             />
           )}
-        </div>
+        </section>
 
-        <div className={style.favoritesCity}>
+        <section className={style.favoritesCity}>
           <FavoritesCity />
-        </div>
-      </div>
+        </section>
+      </main>
     </>
   );
 };

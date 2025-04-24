@@ -4,9 +4,10 @@ import Input from "../../UI/Input/Input";
 import styles from "./styles.module.css";
 import { useDebounce } from "../../helpers/hooks/useDebounce";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../store";
+import { RootState, useAppDispatch } from "../../store";
 import { setCity } from "../../store/slices/weatherSlice";
 import { clearSearchHistory } from "../../store/slices/searchHistorySlice";
+
 interface WeatherHistoryItem {
   name: string;
   country: string;
@@ -16,20 +17,17 @@ interface WeatherHistoryItem {
   localtime: string;
 }
 function SearchHistoryPage() {
+  const [value, setValue] = React.useState<string>();
+
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const searchHistory = useSelector(
-    (state: any) => {
-      return state.searchHistory.searchHistory as WeatherHistoryItem[];
-    } //any
-  );
-  console.log(searchHistory);
-
-  const [value, setValue] = React.useState<string>();
   const debouncedValue = useDebounce(value || "", 1500);
-
+  const searchHistory = useSelector((state: RootState) => {
+    return state.searchHistory.searchHistory as WeatherHistoryItem[];
+  });
   const [filteredTableData, setFilteredTableData] =
     React.useState(searchHistory);
+
   useEffect(() => {
     if (!debouncedValue) {
       setFilteredTableData(searchHistory);
@@ -40,10 +38,12 @@ function SearchHistoryPage() {
       setFilteredTableData(filtered);
     }
   }, [debouncedValue, searchHistory]);
+
   const handleClickOnRow = (item: WeatherHistoryItem) => {
     navigate(`/`);
     dispatch(setCity(item.name));
   };
+
   const cleanSearchHistory = () => {
     dispatch(clearSearchHistory());
   };

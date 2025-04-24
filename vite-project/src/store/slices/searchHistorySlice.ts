@@ -26,22 +26,22 @@ export const searchHistorySlice = createSlice({
       state.searchHistory = action.payload;
     },
     addItemInSearchHistory: (state, action: PayloadAction<Weather>) => {
-      const newItem = action.payload;
-      const now = new Date(newItem.localtime);
-      const nowMinutes = Math.floor(now.getTime() / (1000 * 60));
+      const NEW_ITEM = action.payload;
+      const NOW = new Date(NEW_ITEM.localtime);
+      const NOW_MINUTES = Math.floor(NOW .getTime() / (1000 * 60));
 
       const last = state.searchHistory.find(
-        (item) => item.name === newItem.name && item.country === newItem.country
+        (item) => item.name === NEW_ITEM.name && item.country === NEW_ITEM.country
       );
 
       const lastMinutes = last
         ? Math.floor(new Date(last.localtime).getTime() / (1000 * 60))
         : null;
 
-      const shouldAdd = lastMinutes === null || nowMinutes - lastMinutes >= 2;
+      const shouldAdd = lastMinutes === null || NOW_MINUTES - lastMinutes >= 2;
 
       if (shouldAdd) {
-        state.searchHistory.push(newItem);
+        state.searchHistory.push(NEW_ITEM);
       }
     },
     clearSearchHistory: (state) => {

@@ -16,7 +16,7 @@ function NotFoundPage() {
 
                 <p>страница,которую вы ищите,недоступна!</p>
 
-                <a  className="link_404" onClick={() => window.history.back()}>
+                <a className="link_404" onClick={() => window.history.back()}>
                   Вернуться назад
                 </a>
               </div>
