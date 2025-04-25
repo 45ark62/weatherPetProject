@@ -1,0 +1,39 @@
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  table {
+    min-width: 700px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  td {
+    white-space: normal; 
+    word-break: break-word;
+    cursor: pointer;
+  }
+  th,
+  td {
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  th {
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  tbody tr:nth-child(2n) {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  tr {
+    transition: background-color 0.5s ease;
+  }
+  tr:hover {
+    background: rgba(0, 0, 0, 0.412) !important;
+  }

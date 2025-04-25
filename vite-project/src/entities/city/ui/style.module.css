@@ -1,0 +1,15 @@
+
+.cityItem {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 10px 10px 10px 10px;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.393);
+
+  border-radius: 20px;
+  box-shadow: inset;
+}
+.cityItem:hover {
+  background-color: rgba(255, 255, 255, 0.177);
+}
